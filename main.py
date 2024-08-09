@@ -1,18 +1,26 @@
 from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
 from kivy.core.window import Window
-from kivy.graphics import Color, Rectangle, Ellipse, Line
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 Window.size = (480, 853)
 
 
-class MainScreen(GridLayout):
-    pass
+class MainScreen(Screen):
+    def go_to_addition_screen(self):
+        self.manager.current = "addition_screen"
+
+
+class AdditionScreen(Screen):
+    def go_to_main_screen(self):
+        self.manager.current = "main_screen"
 
 
 class MyApp(App):
     def build(self):
-        return MainScreen()
+        sm = ScreenManager()
+        sm.add_widget(MainScreen(name="main_screen"))
+        sm.add_widget(AdditionScreen(name="addition_screen"))
+        return sm
 
 
 def main():
