@@ -1,19 +1,48 @@
-<Container>:
-    rows : 3
+<WhiteButton@Button>:
+    color: (0,0,0,1)
+    background_color: .8,.8,.8,1
+    background_normal : ''
+    font_size: 20
+    border: (15,16,16,16)
+        
 
-    label : label
-    text_input : text_input
+<MainScreen>:
+    # Пользовательские переменные
+    output : output
+    
 
-    TextInput:
-        id : text_input
-        multiline: False
-        font_size: 40
+    ################################################################
+    # Переменные класса
 
-    Label:
-        id : label
-        text: 'да'
+    rows : 2
+    canvas.before: 
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle: 
+            pos: self.pos
+            size: self.size
 
-    Button:
-        text : "Жми"
-        on_release:root.button_on_release()
+
+    ################################################################
+    # Тут будет экран со статой (Диаграмма какая-нибудт)
+    
+    BoxLayout:
+        id : output
+        size_hint: (1,10)
+
+
+    ################################################################
+    # Кнопочки
+    
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            WhiteButton:
+                text: 'Добавить'
+
+        BoxLayout:
+            WhiteButton:
+                text: 'Отчет'    
+
     

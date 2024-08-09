@@ -1,15 +1,18 @@
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
+from kivy.core.window import Window
+from kivy.graphics import Color, Rectangle, Ellipse, Line
+
+Window.size = (480, 853)
 
 
-class Container(GridLayout):
-    def button_on_release(self):
-        self.label.text = self.text_input.text
+class MainScreen(GridLayout):
+    pass
 
 
 class MyApp(App):
     def build(self):
-        return Container()
+        return MainScreen()
 
 
 def main():
