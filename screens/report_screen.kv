@@ -1,4 +1,4 @@
-<AdditionScreen>:
+<ReportScreen>:
     GridLayout:
         # Пользовательские переменные
         
@@ -16,41 +16,34 @@
 
 
         ################################################################
-        # Тут ввод пользователя
+        # Тут отчет
         
         GridLayout:
             size_hint: (1,10)
             rows: 3
             BoxLayout:
-                TextInput:
-                    hint_text: "Введите цену"
-                    multiline: False
+                Label:
+                    color: (0,0,0,1)
+                    text: 'Тут будет расходы за определеный период'
             
             BoxLayout:
                 Label:
                     color: (0,0,0,1)
-                    text: 'Тут будет тип расхода'
+                    text: 'Тут будет фильтрация расходов по типу'
             
             BoxLayout:
                 Label:
                     color: (0,0,0,1)
-                    text: 'Тут будет дата'
+                    text: 'Тут будет фильтрация расходов по дате'
 
 
         ################################################################
         # Кнопочки
         
-        GridLayout:
-            cols: 2
-
-            BoxLayout:
-                WhiteButton:
-                    text: 'Сохранить'
-
-            BoxLayout:
-                WhiteButton:
-                    text: 'Назад'
-                    on_release: root.go_to_main_screen()
+        BoxLayout:
+            WhiteButton:
+                text: 'Назад'
+                on_release: root.go_to_main_screen()
 
 
         
