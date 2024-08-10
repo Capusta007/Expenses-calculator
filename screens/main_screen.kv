@@ -1,0 +1,43 @@
+<MainScreen>:
+    GridLayout:
+        # Пользовательские переменные
+        output : output
+        
+
+        ################################################################
+        # Переменные класса
+
+        rows : 2
+        canvas.before: 
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle: 
+                pos: self.pos
+                size: self.size
+
+
+        ################################################################
+        # Тут будет экран со статой (Диаграмма какая-нибудт)
+        
+        BoxLayout:
+            id : output
+            size_hint: (1,10)
+
+
+        ################################################################
+        # Кнопочки
+        
+        GridLayout:
+            cols: 2
+
+            BoxLayout:
+                WhiteButton:
+                    text: 'Добавить'
+                    on_release: root.go_to_addition_screen()
+
+            BoxLayout:
+                WhiteButton:
+                    text: 'Отчет'    
+                    on_release: root.go_to_report_screen()
+
+        

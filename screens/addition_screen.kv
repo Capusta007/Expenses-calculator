@@ -1,0 +1,56 @@
+<AdditionScreen>:
+    GridLayout:
+        # Пользовательские переменные
+        
+
+        ################################################################
+        # Переменные класса
+
+        rows : 2
+        canvas.before: 
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle: 
+                pos: self.pos
+                size: self.size
+
+
+        ################################################################
+        # Тут ввод пользователя
+        
+        GridLayout:
+            size_hint: (1,10)
+            rows: 3
+            BoxLayout:
+                TextInput:
+                    hint_text: "Введите цену"
+                    multiline: False
+            
+            BoxLayout:
+                Label:
+                    color: (0,0,0,1)
+                    text: 'Тут будет тип расхода'
+            
+            BoxLayout:
+                Label:
+                    color: (0,0,0,1)
+                    text: 'Тут будет дата'
+
+
+        ################################################################
+        # Кнопочки
+        
+        GridLayout:
+            cols: 2
+
+            BoxLayout:
+                WhiteButton:
+                    text: 'Сохранить'
+
+            BoxLayout:
+                WhiteButton:
+                    text: 'Назад'
+                    on_release: root.go_to_main_screen()
+
+
+        

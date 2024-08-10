@@ -1,0 +1,49 @@
+<ReportScreen>:
+    GridLayout:
+        # Пользовательские переменные
+        
+
+        ################################################################
+        # Переменные класса
+
+        rows : 2
+        canvas.before: 
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle: 
+                pos: self.pos
+                size: self.size
+
+
+        ################################################################
+        # Тут отчет
+        
+        GridLayout:
+            size_hint: (1,10)
+            rows: 3
+            BoxLayout:
+                Label:
+                    color: (0,0,0,1)
+                    text: 'Тут будет расходы за определеный период'
+            
+            BoxLayout:
+                Label:
+                    color: (0,0,0,1)
+                    text: 'Тут будет фильтрация расходов по типу'
+            
+            BoxLayout:
+                Label:
+                    color: (0,0,0,1)
+                    text: 'Тут будет фильтрация расходов по дате'
+
+
+        ################################################################
+        # Кнопочки
+        
+        BoxLayout:
+            WhiteButton:
+                text: 'Назад'
+                on_release: root.go_to_main_screen()
+
+
+        
