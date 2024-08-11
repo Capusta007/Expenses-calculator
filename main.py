@@ -1,11 +1,13 @@
-from kivy.app import App
+from kivymd.app import MDApp
 from kivy.core.window import Window
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.screenmanager import MDScreenManager
+from kivymd.uix.navigationbar import MDNavigationItem
 
 Window.size = (480, 853)
 
 
-class MainScreen(Screen):
+class MainScreen(MDScreen):
     def go_to_addition_screen(self):
         self.manager.current = "addition_screen"
 
@@ -13,19 +15,19 @@ class MainScreen(Screen):
         self.manager.current = "report_screen"
 
 
-class AdditionScreen(Screen):
+class AdditionScreen(MDScreen):
     def go_to_main_screen(self):
         self.manager.current = "main_screen"
 
 
-class ReportScreen(Screen):
+class ReportScreen(MDScreen):
     def go_to_main_screen(self):
         self.manager.current = "main_screen"
 
 
-class MyApp(App):
+class MyApp(MDApp):
     def build(self):
-        sm = ScreenManager()
+        sm = MDScreenManager()
         sm.add_widget(MainScreen(name="main_screen"))
         sm.add_widget(AdditionScreen(name="addition_screen"))
         sm.add_widget(ReportScreen(name="report_screen"))

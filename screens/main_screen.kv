@@ -2,7 +2,6 @@
     GridLayout:
         # Пользовательские переменные
         output : output
-        
 
         ################################################################
         # Переменные класса
@@ -27,17 +26,18 @@
         ################################################################
         # Кнопочки
         
-        GridLayout:
-            cols: 2
-
-            BoxLayout:
-                WhiteButton:
-                    text: 'Добавить'
-                    on_release: root.go_to_addition_screen()
-
-            BoxLayout:
-                WhiteButton:
-                    text: 'Отчет'    
-                    on_release: root.go_to_report_screen()
-
+        MDNavigationBar:
+            BaseMDNavigationItem:
+                icon: "bank-plus"
+                text: "Добавить"
+                on_release: root.go_to_addition_screen()
+            
+            BaseMDNavigationItem:
+                icon: "responsive"
+                text: "Отчет"
+                on_release: root.go_to_report_screen()
+                    
+        
+            
+            
         

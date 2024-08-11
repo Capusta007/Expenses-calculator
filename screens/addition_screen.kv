@@ -40,17 +40,15 @@
         ################################################################
         # Кнопочки
         
-        GridLayout:
-            cols: 2
+        MDNavigationBar:
+            BaseMDNavigationItem:
+                icon: "database-plus"
+                text: "Сохранить"
 
-            BoxLayout:
-                WhiteButton:
-                    text: 'Сохранить'
-
-            BoxLayout:
-                WhiteButton:
-                    text: 'Назад'
-                    on_release: root.go_to_main_screen()
+            BaseMDNavigationItem:
+                icon: "keyboard-backspace"
+                text: "Назад"
+                on_release: root.go_to_main_screen()
 
 
         

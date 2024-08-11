@@ -40,9 +40,10 @@
         ################################################################
         # Кнопочки
         
-        BoxLayout:
-            WhiteButton:
-                text: 'Назад'
+        MDNavigationBar:
+            BaseMDNavigationItem:
+                icon: "keyboard-backspace"
+                text: "Назад"
                 on_release: root.go_to_main_screen()
 
 
