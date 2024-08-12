@@ -16,8 +16,33 @@ class MainScreen(MDScreen):
 
 
 class AdditionScreen(MDScreen):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.menu_items = [
+            {   
+                "text": "Еда",
+                "on_release": lambda x="Еда": self.menu_callback(x)},
+            {
+                "text": "Транспорт",
+                "on_release": lambda x="Транспорт": self.menu_callback(x),
+            },
+            {   
+                "text": "Работа", 
+                "on_release": lambda x="Работа": self.menu_callback(x)},
+            {
+                "text": "Развлечения",
+                "on_release": lambda x="Развлечения": self.menu_callback(x),
+            },
+        ]
+        self.menu = MDDropdownMenu(caller=self.ids.dropdown_button, items=self.menu_items)
+
     def go_to_main_screen(self):
         self.manager.current = "main_screen"
+
+    def menu_callback(self, text_item):
+        self.ids.dropdown_button_text.text = text_item
+        self.menu.dismiss()
 
 
 class ReportScreen(MDScreen):
