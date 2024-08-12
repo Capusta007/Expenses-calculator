@@ -2,7 +2,7 @@ from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
-from kivymd.uix.navigationbar import MDNavigationItem
+from kivymd.uix.menu import MDDropdownMenu
 
 Window.size = (480, 853)
 
